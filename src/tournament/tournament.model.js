@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 const tournamentSchema = new mongoose.Schema({
     tournamentname: {
@@ -17,6 +18,7 @@ const tournamentSchema = new mongoose.Schema({
     creator: {
         type: Schema.Types.ObjectId,
         ref: "User",
+        required: true,
     },
     players: [{
         type: Schema.Types.ObjectId,
@@ -28,4 +30,8 @@ const tournamentSchema = new mongoose.Schema({
     tags: [{
         type: String,
     }]
-})
+});
+
+const Tournament = mongoose.model("Tournament", tournamentSchema);
+
+module.exports = Tournament;
