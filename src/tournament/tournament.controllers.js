@@ -43,3 +43,12 @@ exports.removePlayer = async (req, res) => {
         console.log(error);
     }
 };
+
+exports.deleteTournament = async (req, res) => {
+    try {
+        const tournament = await Tournament.deleteOne({tournamentName: req.body.tournamentName});
+        res.status(200).send({message: "Success", tournament});
+    } catch (error) {
+        console.log(error);
+    }
+};
