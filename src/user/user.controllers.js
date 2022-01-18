@@ -40,7 +40,7 @@ exports.findOne = async (req, res) => {
     res.status(500).send({ message: "Check server logs" });
   }
 };
-exports.allUser = async (req, res) => {
+exports.findAll = async (req, res) => {
   try{
       const result =  await User.find();
       res.send(result);
