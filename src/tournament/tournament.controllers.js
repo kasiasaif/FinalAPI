@@ -11,7 +11,7 @@ exports.addTournament = async (req, res) => {
 
 exports.searchTournament = async (req, res) => {
     try {
-        const tournament = await Tournament.find({[req.body.searchKey]: req.body.searchValue});
+        const tournament = await Tournament.find({[req.params.searchKey]: req.params.searchValue});
         res.status(200).send({message:"Success", tournament});
     } catch (error) {
         console.log(error);

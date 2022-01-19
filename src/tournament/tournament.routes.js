@@ -3,7 +3,7 @@ const { addTournament, searchTournament, addPlayer, removePlayer, deleteTourname
 const tournamentRouter = Router();
 
 tournamentRouter.post("/tournament", addTournament);
-tournamentRouter.get("/tournament", searchTournament);
+tournamentRouter.get("/tournament/searchKey/searchValue", searchTournament);
 tournamentRouter.put("/tournament/add", addPlayer);
 tournamentRouter.put("/tournament/remove", removePlayer);
 tournamentRouter.delete("/tournament", deleteTournament);
